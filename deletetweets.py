@@ -27,16 +27,16 @@ def delete(api, date, r):
                 continue
 
             try:
-                print "Deleting tweet #{0} ({1})".format(tweet_id, tweet_date)
+                print("Deleting tweet #{0} ({1})".format(tweet_id, tweet_date))
 
                 api.DestroyStatus(tweet_id)
                 count += 1
                 time.sleep(0.5)
 
-            except twitter.TwitterError, err:
-                print "Exception: %s\n" % err.message
+            except twitter.TwitterError as err:
+                print("Exception: %s\n" % err.message)
 
-    print "Number of deleted tweets: %s\n" % count
+    print("Number of deleted tweets: %s\n" % count)
 
 def error(msg, exit_code=1):
     sys.stderr.write("Error: %s\n" % msg)
